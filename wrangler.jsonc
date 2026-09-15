@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "auto-blog-generator",
+  "main": "src/index.ts",
+  "account_id": "",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-01-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "auto-blog-generator-db",
+      "database_id": "5e81c84e-db66-46bf-bb6e-6170377989e3"
+    }
+  ],
+  "vars": {
+    "ADMIN_PASSWORD": "changeme",
+    "OPENROUTER_MODEL": "deepseek/deepseek-v4-flash-0731",
+    "ADMIN_SECRET": "change-me-to-a-random-secret"
+  }
+}
