@@ -25,7 +25,7 @@ export async function generateBlogImage(prompt: string, apiKey: string, model = 
     throw new Error(`OpenRouter image API error: ${response.status} - ${error}`);
   }
 
-  const data = await response.json();
+  const data = await response.json() as { choices?: Array<{ message?: { content?: string; images?: any[]; image_url?: { url?: string } } }> };
   const message = data?.choices?.[0]?.message || {};
   const content = typeof message?.content === 'string' ? message.content : '';
   const firstImage = Array.isArray(message?.images) ? message.images[0] : undefined;
